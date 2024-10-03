@@ -84,3 +84,18 @@ const salesSalary = calculateDepartmentSalary(company.departments[1]); //1 = sal
 
 console.log(`Total salary for engineering department: $${engineeringSalary}`);
 console.log(`Total salary for sales department: $${salesSalary}`);
+
+
+//task 3: create a function to calculate the total salary for all departments
+
+function calculateCompanySalary(company) {
+    let totalCompanySalary = 0; //initializing again
+    for (const department of company.departments) {
+        totalCompanySalary += calculateDepartmentSalary(department);
+    }
+    return totalCompanySalary;
+}
+
+const allSalaries = calculateCompanySalary(company);
+
+console.log(`Combined salaries of all company employees: $${allSalaries}`);
